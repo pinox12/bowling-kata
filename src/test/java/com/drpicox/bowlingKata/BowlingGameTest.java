@@ -36,10 +36,15 @@ public class BowlingGameTest {
 
     @Test
     public void oneSpare() {
-        g.roll(5);
-        g.roll(5); // spare
+        rollSpare();
         g.roll(3);
         rollMany(17,0);
         assertThat(g.score(), is(16));
     }
+
+    private void rollSpare() {
+        g.roll(5);
+        g.roll(5);
+    }
+
 }
