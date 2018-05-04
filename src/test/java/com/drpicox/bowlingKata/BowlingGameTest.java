@@ -14,21 +14,19 @@ public class BowlingGameTest {
     private Game g;
 
     @Before
-    protected void setUp() {
+    public void setUp() {
         g = new Game();
-    }
-
-    @Test
-    public void testGutterGame() {
-        int n = 20;
-        int pins = 0;
-        rollMany(n, pins);
-        assertThat(g.score(), is(0));
     }
 
     private void rollMany(int n, int pins) {
         for (int i=0; i<n; i++)
             g.roll(pins);
+    }
+
+    @Test
+    public void testGutterGame() {
+        rollMany(20, 0);
+        assertThat(g.score(), is(0));
     }
 
     @Test
