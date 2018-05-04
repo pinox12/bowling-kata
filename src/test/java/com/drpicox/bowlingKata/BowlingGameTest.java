@@ -47,9 +47,16 @@ public class BowlingGameTest {
         rollStrike();
         g.roll(3);
         g.roll(4);
-        rollMany(16, 0);
+        rollMany(16, 0);    
         assertThat(g.score(), is(24));
     }
+
+    @Test
+    public void perfectGame(){
+        rollMany(12,10);
+        assertThat(g.score(), is(300));
+    }
+
 
     private void rollStrike() {
         g.roll(10);
