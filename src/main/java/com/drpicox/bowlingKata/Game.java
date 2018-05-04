@@ -1,7 +1,11 @@
 package com.drpicox.bowlingKata;
 
 public class Game {
-    public void roll(int i) {
+
+    private int score = 0;
+
+    public void roll(int pins) {
+        score += pins;
     }
 
     public int score() {
