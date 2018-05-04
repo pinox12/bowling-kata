@@ -3,8 +3,6 @@ package com.drpicox.bowlingKata;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.SQLException;
-
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -47,7 +45,7 @@ public class BowlingGameTest {
         rollStrike();
         g.roll(3);
         g.roll(4);
-        rollMany(16, 0);    
+        rollMany(16, 0);
         assertThat(g.score(), is(24));
     }
 
@@ -56,7 +54,6 @@ public class BowlingGameTest {
         rollMany(12,10);
         assertThat(g.score(), is(300));
     }
-
 
     private void rollStrike() {
         g.roll(10);
