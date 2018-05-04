@@ -42,6 +42,16 @@ public class BowlingGameTest {
         assertThat(g.score(), is(16));
     }
 
+    @Test
+    public void oneStrike(){
+        g.roll(10); // strike
+        g.roll(3);
+        g.roll(4);
+        rollMany(16, 0);
+        assertThat(g.score(), is(24));
+    }
+
+
     private void rollSpare() {
         g.roll(5);
         g.roll(5);
